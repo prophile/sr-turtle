@@ -1,12 +1,15 @@
 from game_object import GameObject
-from vision import create_marker_info_by_type, MARKER_TOKEN, MARKER_ARENA
+from vision import create_marker_info_by_type, MARKER_TOKEN_SILVER, MARKER_TOKEN_GOLD, MARKER_ARENA
 
 class Token(GameObject):
     grabbable = True
+    GOLD = 'GOLD'
+    SILVER = 'SILVER'
 
-    def __init__(self, arena, number):
+    def __init__(self, arena, colour, number):
         GameObject.__init__(self, arena)
-        self.marker_info = create_marker_info_by_type(MARKER_TOKEN, number)
+        self.marker_info = create_marker_info_by_type({self.GOLD: MARKER_TOKEN_GOLD,
+                                                       self.SILVER: MARKER_TOKEN_SILVER}[colour], number)
         self.grabbed = False
 
     def grab(self):
