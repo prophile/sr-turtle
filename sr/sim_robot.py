@@ -53,6 +53,7 @@ class SimRobot(GameObject):
         GameObject.__init__(self, simulator.arena)
         self.motors = [Motor(self), Motor(self)]
         self.corners = self._calculate_corners(self.location, self.heading)
+        self.location = (-2.0, -2.0)
         simulator.arena.objects.append(self)
 
     ## Internal methods ##
