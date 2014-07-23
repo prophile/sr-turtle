@@ -15,7 +15,8 @@ class Arena(object):
 
     zone_size = 1
 
-    motif_name = 'sr/sr_round_flat.png'
+    #motif_name = 'sr/sr_round_flat.png'
+    motif_name = 'sr/smallpeice_logo.png'
 
     @property
     def left(self):
